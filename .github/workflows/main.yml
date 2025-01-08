@@ -1,0 +1,49 @@
+name: Run Katalon Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  katalon-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+
+      - name: Install Xvfb
+        run: sudo apt-get install -y xvfb
+
+      - name: Download Katalon Runtime Engine
+        run: |
+          curl -O https://download.katalon.com/10.0.1/Katalon_Studio_Engine_Linux_64-10.0.1.tar.gz
+          tar -xzf Katalon_Studio_Engine_Linux_64-10.0.1.tar.gz
+
+      - name: Run Katalon Test Suite
+        run: |
+          Xvfb :99 -screen 0 1024x768x24 &
+          export DISPLAY=:99
+          ./Katalon_Studio_Engine_Linux_64-10.0.1/katalonc -noSplash -runMode=console -projectPath="$(pwd)/Automation/.project" \
+           -retry=0 \
+           -testSuitePath="Test Suites/Google" \
+           -browserType="Chrome (headless)" \
+           -executionProfile="default" \
+           -apiKey="4875209e-6bca-40f0-8b4f-0a867717300c" \
+           --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true -webui.autoUpdateDrivers=true
+
+      - name: Katalon Report Uploader
+        uses: katalon-studio/report-uploader@v0.0.8
+        env:
+          PASSWORD: 4875209e-6bca-40f0-8b4f-0a867717300c
+          PROJECT_ID: 1826656
+          TYPE: katalon
+          REPORT_PATH: Reports
