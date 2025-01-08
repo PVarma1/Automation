@@ -22,7 +22,7 @@ jobs:
 
       - name: Download Katalon Runtime Engine
         run: |
-          Invoke-WebRequest -Uri https://download.katalon.com/10.0.1/Katalon_Studio_Engine_Windows_64-10.0.1.zip
+          Invoke-WebRequest -Uri https://download.katalon.com/10.0.1/Katalon_Studio_Engine_Windows_64-10.0.1.zip -OutFile Katalon_Studio_Engine_Windows_64-10.0.1.zip
           Expand-Archive -Path Katalon_Studio_Engine_Windows_64-10.0.1.zip -DestinationPath .
 
       - name: Run Katalon Test Suite
