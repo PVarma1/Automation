@@ -20,10 +20,10 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
-      - name: Install Xvfb and Dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y xvfb libgl1-mesa-dri libglx-mesa0 mesa-vulkan-drivers at-spi2-core
+     #* - name: Install Xvfb and Dependencies
+        #run: |
+        #  sudo apt-get update
+        #  sudo apt-get install -y xvfb libgl1-mesa-dri libglx-mesa0 mesa-vulkan-drivers at-spi2-core 
 
       - name: Download Katalon Runtime Engine
         run: |
@@ -44,8 +44,8 @@ jobs:
            -apiKey="4875209e-6bca-40f0-8b4f-0a867717300c" \
            --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true -webui.autoUpdateDrivers=true
 
-      - name: Check Xvfb Process
-        run: ps aux | grep Xvfb
+     # - name: Check Xvfb Process
+       #  run: ps aux | grep Xvfb
 
       - name: Katalon Report Uploader
         uses: katalon-studio/report-uploader@v0.0.8
