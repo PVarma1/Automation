@@ -1,0 +1,10 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+Google,Chrome 131.0.0.0,,,08-01-2025 14:36:09,08-01-2025 14:36:17,8.512s,PASSED
+,,,,,,,
+Test Cases/google,Chrome 131.0.0.0,,,08-01-2025 14:36:09,08-01-2025 14:36:17,8.324s,PASSED
+"openBrowser("""")",Chrome 131.0.0.0,,,08-01-2025 14:36:09,08-01-2025 14:36:11,2.344s,PASSED
+"navigateToUrl(""https://www.google.com/"")",Chrome 131.0.0.0,,,08-01-2025 14:36:11,08-01-2025 14:36:12,0.832s,PASSED
+"setText(findTestObject(""Object Repository/Google/Page_Google/textarea_Sign in_q""), ""genshin impact archons"")",Chrome 131.0.0.0,,,08-01-2025 14:36:12,08-01-2025 14:36:13,0.836s,PASSED
+"click(findTestObject(""Object Repository/Google/Page_Google/span_genshin impact archons""))",Chrome 131.0.0.0,,,08-01-2025 14:36:13,08-01-2025 14:36:14,0.884s,PASSED
+"click(findTestObject(""Object Repository/Google/Page_genshin impact archons - Google Search/div_15 moreShow less""))",Chrome 131.0.0.0,,,08-01-2025 14:36:14,08-01-2025 14:36:17,3.078s,PASSED
+closeBrowser(),Chrome 131.0.0.0,,,08-01-2025 14:36:17,08-01-2025 14:36:17,0.152s,PASSED
