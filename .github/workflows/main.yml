@@ -38,7 +38,7 @@ jobs:
           export DISPLAY=:99
           ./Katalon_Studio_Engine_Linux_64-10.0.1/katalonc -noSplash -runMode=console -projectPath="$(pwd)/Automation/.project" \
            -retry=0 \
-           -testSuitePath="Test Suites/Google" \
+           -testSuitePath="Test Suites" \
            -browserType="Chrome (headless)" \
            -executionProfile="default" \
            -apiKey="4875209e-6bca-40f0-8b4f-0a867717300c" \
