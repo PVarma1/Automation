@@ -29,7 +29,7 @@ jobs:
       - name: Run Katalon Test Suite
         timeout-minutes : 30
         run: |
-          .\Katalon_Studio_Engine_Windows_64-10.0.1\katalonc.exe -noSplash -runMode=console -projectPath="$(pwd)\Automation\.project" \-retry=0 -testSuitePath="Test Suites/Google" -browserType="Chrome (headless)" -executionProfile="default" -apiKey="4875209e-6bca-40f0-8b4f-0a867717300c" --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true -webui.autoUpdateDrivers=true
+          .\Katalon_Studio_Engine_Windows_64-10.0.1\katalonc.exe -noSplash -runMode=console -projectPath="$(pwd)\github\automation\.project" -retry=0 -testSuitePath="Test Suites/Google" -browserType="Chrome (headless)" -executionProfile="default" -apiKey="4875209e-6bca-40f0-8b4f-0a867717300c" --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true -webui.autoUpdateDrivers=true
 
       - name: Katalon Report Uploader
         uses: katalon-studio/report-uploader@v0.0.8
