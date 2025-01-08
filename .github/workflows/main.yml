@@ -25,9 +25,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y xvfb libgl1-mesa-dri libglx-mesa0 mesa-vulkan-drivers at-spi2-core
 
-      - name: Disable Vulkan (Optional)
-        run: echo "MESA_LOADER_DRIVER_OVERRIDE=i965" >> /etc/environment
-
       - name: Download Katalon Runtime Engine
         run: |
           curl -O https://download.katalon.com/10.0.1/Katalon_Studio_Engine_Linux_64-10.0.1.tar.gz
