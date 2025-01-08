@@ -24,6 +24,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y xvfb libgl1-mesa-dri libglx-mesa0 mesa-vulkan-drivers at-spi2-core
+          sudo cp /usr/share/X11/xkb/symbols/inet /etc/X11/xkb/symbols/inet
 
       - name: Download Katalon Runtime Engine
         run: |
@@ -49,8 +50,6 @@ jobs:
            -executionProfile="default" \
            -apiKey="4875209e-6bca-40f0-8b4f-0a867717300c" \
            --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY -proxy.system.applyToDesiredCapabilities=true -webui.autoUpdateDrivers=true
-
-     
 
       - name: Debug Environment Variables
         run: |
